@@ -1,12 +1,17 @@
 import React from 'react'
-import { useMyHook } from '@seberm/react-marquee'
+import Marquee from '@seberm/react-marquee'
 
 const App = () => {
-  const example = useMyHook()
+
   return (
-    <div>
-      {example}
-    </div>
+    <>
+      <Marquee spacing="50">
+        <h2>Sebooster</h2>
+      </Marquee>
+      <Marquee spacing="50" reverse>
+        <h2>Hej</h2>
+      </Marquee>
+    </>
   )
 }
 export default App
