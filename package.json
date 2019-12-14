@@ -1,6 +1,6 @@
 {
   "name": "@seberm/react-marquee",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React Marquee using GSAP",
   "author": "Ermilin",
   "license": "MIT",
