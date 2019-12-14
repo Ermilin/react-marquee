@@ -49,5 +49,3 @@ const Example = () => {
 MIT © [Ermilin](https://github.com/Ermilin)
 
 ---
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).
