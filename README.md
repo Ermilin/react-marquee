@@ -1,6 +1,8 @@
 # @seberm/react-marquee
 
 > React Marquee using GSAP
+The animation direction reflects the clients scroll direction
+Scrolling takes over the animation speed
 
 [![NPM](https://img.shields.io/npm/v/@seberm/react-marquee.svg)](https://www.npmjs.com/package/@seberm/react-marquee) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
