@@ -1,6 +1,6 @@
 # @seberm/react-marquee
 
-> The best marquee on NPM
+> React Marquee using GSAP
 
 [![NPM](https://img.shields.io/npm/v/@seberm/react-marquee.svg)](https://www.npmjs.com/package/@seberm/react-marquee) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -25,6 +25,24 @@ const Example = () => {
   )
 }
 ```
+
+## CSS
+
+```css
+.marquee-container, .marquee-wrap  {
+  overflow:hidden;
+}
+.marquee {
+  position:absolute;
+}
+```
+
+## Props
+
+| name | type | default | description | 
+| --- | --- | --- | --- |
+| reverse | boolean | false | animates from left to right | 
+| separation | number | 0 | separation between each child in px |
 
 ## License
 
