@@ -15,12 +15,13 @@ npm install --save @seberm/react-marquee
 ```jsx
 import React, { Component } from 'react'
 
-import { useMyHook } from '@seberm/react-marquee'
+import Marquee from '@seberm/react-marquee'
 
 const Example = () => {
-  const example = useMyHook()
   return (
-    <div>{example}</div>
+    <Marquee spacing="20">
+      <h2>Hello World<h2>
+    </Marquee>
   )
 }
 ```
