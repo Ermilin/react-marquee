@@ -8,6 +8,7 @@ Scrolling takes over the animation speed
 
 [![NPM](https://img.shields.io/npm/v/@seberm/react-marquee.svg)](https://www.npmjs.com/package/@seberm/react-marquee) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+[Live demo](https://codesandbox.io/s/react-marquee-00e0w)
 ## Install
 
 ```bash
