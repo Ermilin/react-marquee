@@ -4,7 +4,10 @@
   "description": "React Marquee using GSAP",
   "author": "Ermilin",
   "license": "MIT",
-  "repository": "Ermilin/@seberm/react-marquee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ermilin/react-marquee"
+  },
   "keywords": [
     "react",
     "marquee",
