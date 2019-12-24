@@ -8,18 +8,9 @@ body {
   height: 500vh;
 }
 
-/* .marquee-container {
-}
-
-.marquee-container {
+.marquee-container, .marquee-wrap  {
   overflow:hidden;
-  grid-column: 1/5;
-}
-
-.marquee-wrap {
-  overflow: hidden;
-
 }
 .marquee {
   position:absolute;
-} */
+}

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Marquee from '@seberm/react-marquee'
 
 const App = () => {
+  const [toggle, setToggle] = useState(false)
 
   return (
     <>
@@ -11,6 +12,9 @@ const App = () => {
       <Marquee spacing="50" reverse>
         <h2>Hej</h2>
       </Marquee>
+
+      <button onClick={() => setToggle(!toggle)}>toggle</button>
+      <h1>toggled: {toggle ? 'true' : 'false'}</h1>
     </>
   )
 }

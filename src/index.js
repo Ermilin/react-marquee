@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, createRef, useLayoutEffect } from 'react'
+import React, { useRef, useEffect, useState, createRef, useLayoutEffect, useCallback } from 'react'
 import gsap, { Linear } from 'gsap'
 import 'gsap/ModifiersPlugin'
 
@@ -16,39 +16,41 @@ const Marquee = props => {
   let tweenDistance = props.reverse ? separation * cards.length : -separation * cards.length
   let sensitivity = 0.001
 
-  const animate = (e, i) => {
-    gsap.set(target.current[i], {
-      x: (i + cards.length) * separation
-    })
+  const animate = useCallback((e, i) => {
+    for (let i = 0; i < cards.length; i++) {
 
-    gsap.to(target.current[i], speed, {
-      repeat: -1,
-      ease: Linear.easeNone,
-      x: `+=${tweenDistance}`,
-      modifiers: {
-        x: x => {
-          return x % tweenDistance
+      gsap.set(target.current[i], {
+        x: (i + cards.length) * separation
+      })
+
+      gsap.to(target.current[i], speed, {
+        repeat: -1,
+        ease: Linear.easeNone,
+        x: `+=${tweenDistance}`,
+        modifiers: {
+          x: x => {
+            return x % tweenDistance
+          }
         }
-      }
-    })
-  }
+      })
+    }
+  }, [distance])
 
   useEffect(() => {
     if (distance) {
-      console.log(distance)
-      cards.forEach(animate)
+      animate()
     }
   }, [animate])
 
   useLayoutEffect(() => {
     addCards()
-
     let newSeparation = Math.round(target.current[0].clientWidth)
     setSeparation(newSeparation)
     setDistance(newSeparation * cards.length)
   }, [])
 
-  function addCards() {
+
+  const addCards = () => {
     let amountCalc = Math.ceil((window.innerWidth + target.current[0].clientWidth) / (target.current[0].clientWidth * cards.length))
 
     for (let i = cards.length; i < amountCalc; i++) {
@@ -118,7 +120,8 @@ const Marquee = props => {
       if (target) {
         for (let i = 0; i < allTweens.length; i++) {
           allTweens[i].pause()
-          allTweens[i].progress(9999) // boost progress to prevent tween from stopping when reversing past 0 progress
+          // boost progress to prevent tween from stopping when reversing past 0 progress
+          allTweens[i].progress(9999)
           allTweens[i].progress(progress + (newPos * sensitivity))
         }
       }
